@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+    <style>
+      body{
+        overflow:hidden;
+        padding:0;
+        margin:0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+    //display height and width
+    var w=window.innerWidth;
+    var h=window.innerHeight;
+    //display position
+    var posX=w/2;
+    var posY=h/2;
+    //movementspeed
+    var speed=10;
+      function setup(){
+        createCanvas(w,h);
+      }
+      function draw(){
+        background(255);
+        fill(color(255,51,51));
+        //rectangle(xvalue,yvalue,width,height)
+        rect(posX-50,posY-50,100,100);
+        //w
+        if((keyIsDown(87))&&(posY>50)){
+          posY-=speed;
+        }
+        //s
+        if((keyIsDown(83))&&(posY<h-50)){
+          posY+=speed;
+        }
+        //a
+        if((keyIsDown(65))&&(posX>50)){
+          posX-=speed;
+        }
+        //d
+        if((keyIsDown(68))&&(posX<w-50)){
+          posX+=speed;
+        }
+      }
+
+    </script>
+  </body>
+</html>
